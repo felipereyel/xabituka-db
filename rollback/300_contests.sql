@@ -1,5 +1,5 @@
-DROP TABLE "contests";
+DROP TABLE "contests_answers";
 
 DROP TABLE "contests_questions";
 
-DROP TABLE "contest_answers";
+DROP TABLE "contests";

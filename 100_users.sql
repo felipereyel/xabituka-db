@@ -1,12 +1,12 @@
-CREATE TYPE "user_type" AS ENUM (
+CREATE TYPE user_type_enum AS ENUM (
   'professor',
   'student',
   'admin'
 );
 
-CREATE TABLE "users" (
-  "id" int,
-  "nickname" varchar,
-  "user_type" int,
-  "created_at" timestamp
+CREATE TABLE users (
+  id serial PRIMARY KEY,
+  nickname varchar,
+  user_type user_type_enum,
+  created_at timestamp default now()
 );
