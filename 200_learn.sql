@@ -1,4 +1,4 @@
-CREATE TABLE topic (
+CREATE TABLE topics (
   id serial primary key,
   name text not null
 );
@@ -26,7 +26,7 @@ CREATE TABLE learn_scoreboard (
   total_score int not null
 );
 
-ALTER TABLE learn_questions ADD FOREIGN KEY (topic_id) REFERENCES topic (id);
+ALTER TABLE learn_questions ADD FOREIGN KEY (topic_id) REFERENCES topics (id);
 
 ALTER TABLE learn_answers ADD FOREIGN KEY (user_id) REFERENCES users (id);
 
@@ -34,4 +34,4 @@ ALTER TABLE learn_answers ADD FOREIGN KEY (learn_questions_id) REFERENCES learn_
 
 ALTER TABLE learn_scoreboard ADD FOREIGN KEY (user_id) REFERENCES users (id);
 
-ALTER TABLE learn_scoreboard ADD FOREIGN KEY (topic_id) REFERENCES topic (id);
+ALTER TABLE learn_scoreboard ADD FOREIGN KEY (topic_id) REFERENCES topics (id);
