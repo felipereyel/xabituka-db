@@ -1,5 +1,11 @@
+CREATE TABLE subjects(
+  id serial primary key,
+  name text not null
+);
+
 CREATE TABLE topics (
   id serial primary key,
+  subject_id int not null,
   name text not null
 );
 
@@ -25,6 +31,8 @@ CREATE TABLE learn_scoreboard (
   total_answers int not null,
   total_score int not null
 );
+
+ALTER TABLE topics ADD FOREIGN KEY (subject_id) REFERENCES subjects (id);
 
 ALTER TABLE learn_questions ADD FOREIGN KEY (topic_id) REFERENCES topics (id);
 

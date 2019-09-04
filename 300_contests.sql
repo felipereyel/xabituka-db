@@ -3,7 +3,7 @@ CREATE TABLE contests (
   name varchar not null,
   pin text not null,
   author_id int not null,
-  open boolean not null
+  private boolean not null
 );
 
 CREATE TABLE contests_questions (
